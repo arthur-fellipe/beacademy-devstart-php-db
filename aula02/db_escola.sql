@@ -25,6 +25,8 @@ VALUES (
     'Bruno', 'bruno@email.com', '22222222222'
 );
 
+SELECT * FROM tb_professor;
+
 INSERT INTO tb_aluno (nome, email, cpf, matricula)
 VALUES (
     'Amanda', 'amanda@email.com', '33333333333', '1'
@@ -34,3 +36,5 @@ INSERT INTO tb_aluno (nome, email, cpf, matricula)
 VALUES (
     'Diogo', 'diogo@email.com', '44444444444', '2'
 );
+
+SELECT * FROM tb_aluno;
