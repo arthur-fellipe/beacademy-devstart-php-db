@@ -2,11 +2,9 @@
 
 include '../vendor/autoload.php';
 
-$database = 'db_store';
-$username = 'root';
-$password = '120396';
+use App\Connection\Connection;
 
-$connection = new PDO('mysql:host=localhost;dbname='.$database, $username, $password);
+$connection = Connection::getConnection();
 
 $query = 'SELECT * FROM tb_category;';
 
@@ -15,9 +13,9 @@ $preparacao->execute();
 
 var_dump($preparacao->fetch());
 
-// while ($registro = $preparacao->fetch()) {
-//     var_dump($registro);
-// }
+while ($registro = $preparacao->fetch()) {
+    var_dump($registro);
+}
 
 // use App\Controller\IndexController;
 // use App\Controller\ProductController;
