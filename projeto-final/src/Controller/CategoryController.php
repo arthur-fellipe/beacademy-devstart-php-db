@@ -13,14 +13,6 @@ class CategoryController extends AbstractController {
 
         $result = $con->prepare('SELECT * FROM tb_category;');
         $result->execute();
-
-        // $data = $result->fetch(\PDO::FETCH_ASSOC);
-
-        // include dirname(__DIR__).'/View/category/list.php';
-        
-        // echo $cat['id'];
-        // echo $cat['name'];
-        // echo $cat['description'];
         
         parent::render('category/list', $result);
     }
@@ -57,8 +49,31 @@ class CategoryController extends AbstractController {
         echo 'Pronto, categoria excluída!';
     }
 
-    // public function editAction(): void 
-    // {
-    //     parent::render('category/edit');
-    // }
+    public function editAction(): void 
+    {
+        $id = $_GET['id'];
+
+        $con = Connection::getConnection();
+
+        if ($_POST) {
+            $newName = $_POST['name'];
+            $newDescription = $_POST['description'];
+
+            $queryUpdate = "UPDATE tb_category SET name='{$newName}', description='{$newDescription}' WHERE id='{$id}'";
+
+            $result = $con->prepare($queryUpdate);
+            $result->execute();
+
+            echo 'Pronto, categoria editada!';
+        }
+
+        $query = "SELECT * FROM tb_category WHERE id='{$id}'";
+
+        $result = $con->prepare($query);
+        $result->execute();
+
+        $data = $result->fetch(\PDO::FETCH_ASSOC);
+        
+        parent::render('category/edit', $data);
+    }
 }
