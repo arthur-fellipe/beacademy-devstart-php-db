@@ -19,6 +19,7 @@ $routes = [
     '/product/edit' => createRoute(ProductController::class, 'editAction'),
     '/category' => createRoute(CategoryController::class, 'listAction'),
     '/category/new' => createRoute(CategoryController::class, 'addAction'),
+    '/category/remove' => createRoute(CategoryController::class, 'removeAction'),
     '/category/edit' => createRoute(CategoryController::class, 'editAction'),
 ];
 
