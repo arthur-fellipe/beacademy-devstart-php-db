@@ -30,7 +30,7 @@ class CategoryController extends AbstractController {
             $result = $con->prepare($query);
             $result->execute();
 
-            echo 'Pronto, categoria inserida!';
+            parent::renderMessageCategory('Pronto, categoria inserida!');
         }
         parent::render('category/add');
     }
@@ -46,7 +46,7 @@ class CategoryController extends AbstractController {
         $result = $con->prepare($query);
         $result->execute();
 
-        echo 'Pronto, categoria excluída!';
+        parent::renderMessageCategory('Pronto, categoria excluída!');
     }
 
     public function editAction(): void 
@@ -64,7 +64,7 @@ class CategoryController extends AbstractController {
             $result = $con->prepare($queryUpdate);
             $result->execute();
 
-            echo 'Pronto, categoria editada!';
+            parent::renderMessageCategory('Pronto, categoria editada!');
         }
 
         $query = "SELECT * FROM tb_category WHERE id='{$id}'";

@@ -41,7 +41,7 @@ class ProductController extends AbstractController {
             $result = $con->prepare($query);
             $result->execute();
 
-            echo 'Pronto, produto cadastrado!';
+            parent::renderMessageProduct('Pronto, produto cadastrado!');
         }
 
         $result = $con->prepare('SELECT * FROM tb_category;');
@@ -61,7 +61,7 @@ class ProductController extends AbstractController {
         $result = $con->prepare($query);
         $result->execute();
 
-        parent::renderMessage('Pronto, produto excluído!');
+        parent::renderMessageProduct('Pronto, produto excluído!');
     }
     
     public function editAction(): void 
@@ -82,7 +82,7 @@ class ProductController extends AbstractController {
             $result = $con->prepare($queryUpdate);
             $result->execute();
 
-            echo 'Pronto, produto editado!';
+            parent::renderMessageProduct('Pronto, produto editado!');
         }
 
         $product = $con->prepare("SELECT * FROM tb_product WHERE id='{$id}'");
