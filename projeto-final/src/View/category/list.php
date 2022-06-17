@@ -19,8 +19,8 @@
                     echo "<td>{$name}</td>";
                     echo "<td>{$description}</td>";
                     echo "<td>
-                        <a href='/category/edit?id=$id' class='btn btn-warning btn-sm'>Editar</a>
-                        <a href='/category/remove?id=$id' class='btn btn-danger btn-sm'>Excluir</a>
+                        <a href='/category/edit?id=$id' class='btn btn-outline-warning btn-sm'>Editar</a>
+                        <a href='/category/remove?id=$id' class='btn btn-outline-danger btn-sm'>Excluir</a>
                     </td>";
                 echo '</tr>';
             }
