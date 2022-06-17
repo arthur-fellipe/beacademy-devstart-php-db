@@ -1,8 +1,7 @@
-<h1>Editar Produtos</h1>
+<h1>Editar Produto</h1>
 
 <?php
     extract($data);
-    var_dump($data);
 ?>
 <form action="" method="post">
     <label for="name">Nome</label>
