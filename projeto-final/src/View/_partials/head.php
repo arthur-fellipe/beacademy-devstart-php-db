@@ -14,6 +14,7 @@
 
     <nav class="mt-3">
         <a href="/" class="btn btn-outline-dark">Início</a>
+        <a href="/login" class="btn btn-outline-dark">Login</a>
         <a href="/category" class="btn btn-outline-dark">Categorias</a>
         <a href="/product" class="btn btn-outline-dark">Produtos</a>
     </nav>
